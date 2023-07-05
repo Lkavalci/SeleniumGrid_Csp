@@ -9,7 +9,7 @@ public class Grid_02 {
     @Parameters("browser")
     @BeforeTest
     void beforeTest()
-git
+
 
     @Test
     void  test01(){
