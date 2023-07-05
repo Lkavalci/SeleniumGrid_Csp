@@ -9,7 +9,7 @@ public class Grid_02 {
     @Parameters("browser")
     @BeforeTest
     void beforeTest()
-
+git
 
     @Test
     void  test01(){
@@ -24,4 +24,9 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:Lkavalci/SeleniumGrid_Csp.git
 git push -u origin main
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github-key
  */
