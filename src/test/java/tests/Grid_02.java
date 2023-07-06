@@ -1,32 +1,30 @@
 package tests;
 
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import static manager.DriverManager.*;
+
 
 public class Grid_02 {
 
     @Parameters("browser")
     @BeforeTest
-    void beforeTest()
+    void beforeTest(@Optional("browser") String browser){
+        setDriver("firefox");
+    }
 
 
     @Test
-    void  test01(){
-
+    void test01(){
+        driver.get("https://www.wisequarter.com");
+        System.out.println(driver.getCurrentUrl());
+        System.out.println(driver.getTitle());
     }
-}
-/*
-cho "# SeleniumGrid_Csp" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin git@github.com:Lkavalci/SeleniumGrid_Csp.git
-git push -u origin main
 
-Host github.com
-  HostName github.com
-  User git
-  IdentityFile ~/.ssh/github-key
- */
+
+    @AfterTest
+    void afterTest(){
+        closeDriver();
+    }
+
+
+}
